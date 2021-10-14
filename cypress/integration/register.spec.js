@@ -22,5 +22,7 @@ describe('Register', () => {
     cy.get('input#secondpassword').type('Alunos@2021');
 
     cy.contains('Finalizar cadastro').click();
+
+    cy.url().should('contain', 'listagem')
   });
 });
