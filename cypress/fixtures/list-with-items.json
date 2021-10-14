@@ -1,0 +1,27 @@
+[
+  {
+    "firstName": "Agilizei",
+    "lastName": "Bootcamp",
+    "adress": "Rua dos bobos, 0",
+    "emailAdress": "test@mail.com",
+    "radioGender": "f",
+    "checks": ["Netflix", "Dormir"],
+    "selectCountries": "Hong Kong",
+    "selectYears": "2006",
+    "selectMonths": "Janeiro",
+    "pwd": "Alunos@2021"
+  },
+  {
+    "firstName": "Agilizei",
+    "lastName": "Spark",
+    "adress": "Rua dos bobos, 0",
+    "emailAdress": "spark@mail.com",
+    "radioGender": "n",
+    "checks": ["Netflix", "Dormir"],
+    "selectCountries": "Dinamarca",
+    "selectYears": "2018",
+    "selectMonths": "Abril",
+    "pwd": "Alunos@2021"
+  }
+
+]
