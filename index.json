@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-14T21:35:47.894Z",
+    "end": "2021-10-14T21:36:14.134Z",
+    "duration": 8149,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "997949d2-5e96-4323-9272-279c64e1478a",
+      "title": "",
+      "fullFile": "cypress/integration/register.spec.js",
+      "file": "cypress/integration/register.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "20407def-b03a-4630-b4e9-7ac3b86c1d73",
+          "title": "Register",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should register when fill in the form with the data and submit it",
+              "fullTitle": "Register should register when fill in the form with the data and submit it",
+              "timedOut": null,
+              "duration": 5693,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://form-agilizei.netlify.app');\ncy.get('input[name=firstName]').type(chance.first());\ncy.get('input[name=lastName]').type(chance.last());\ncy.get('textarea[name=adress]').type(chance.address());\ncy.get('input[name=emailAdress]').type(chance.email());\ncy.get('input[value=n]').check();\ncy.get('input[type=checkbox]').check('Netflix');\ncy.get('input[type=checkbox]').check('Dormir');\ncy.get('select#countries').select('Dinamarca', {\n  force: true\n});\ncy.get('select#years').select('2006', {\n  force: true\n});\ncy.get('select#months').select('Janeiro', {\n  force: true\n});\ncy.get('select#days').select('8', {\n  force: true\n});\ncy.get('input#firstpassword').type('Alunos@2021');\ncy.get('input#secondpassword').type('Alunos@2021');\ncy.contains('Finalizar cadastro').click();\ncy.url().should('contain', 'listagem');",
+              "err": {},
+              "uuid": "9f211f46-d497-445e-bf4a-0df3ad69de22",
+              "parentUUID": "20407def-b03a-4630-b4e9-7ac3b86c1d73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f211f46-d497-445e-bf4a-0df3ad69de22"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5693,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "03378f29-346c-4a27-bbc0-46c2d2d6528f",
+      "title": "",
+      "fullFile": "cypress/integration/list.spec.js",
+      "file": "cypress/integration/list.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea22d60a-8c6e-400e-993e-e4c14c4fc8e4",
+          "title": "List",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should show an empty list when there is no register",
+              "fullTitle": "List should show an empty list when there is no register",
+              "timedOut": null,
+              "duration": 1935,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('empty-list').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit('https://form-agilizei.netlify.app/listagem.html');\ncy.get('table tbody tr').should('have.length', 0);",
+              "err": {},
+              "uuid": "69f95bcd-3b82-422e-b8ad-67eb9e7904ce",
+              "parentUUID": "ea22d60a-8c6e-400e-993e-e4c14c4fc8e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should list all records when there are registers",
+              "fullTitle": "List should list all records when there are registers",
+              "timedOut": null,
+              "duration": 521,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('list-with-items').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit('https://form-agilizei.netlify.app/listagem.html');\ncy.get('table tbody tr').should('have.length', 2);",
+              "err": {},
+              "uuid": "23863afc-4ca4-4a7f-b3e4-39066f03d08a",
+              "parentUUID": "ea22d60a-8c6e-400e-993e-e4c14c4fc8e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69f95bcd-3b82-422e-b8ad-67eb9e7904ce",
+            "23863afc-4ca4-4a7f-b3e4-39066f03d08a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2456,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
