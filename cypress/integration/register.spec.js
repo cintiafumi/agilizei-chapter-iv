@@ -1,14 +1,17 @@
 /// <reference types="cypress" />
 
+const Chance = require('chance');
+const chance = new Chance();
+
 describe('Register', () => {
   it('should register when fill in the form with the data and submit it', () => {
-    cy.visit('https://form-agilizei.netlify.app')
+    cy.visit('https://form-agilizei.netlify.app');
 
-    cy.get('input[name=firstName]').type('Agilizei');
-    cy.get('input[name=lastName]').type('Bootcamp');
-    cy.get('textarea[name=adress]').type('Rua dos bobos, 0');
-    cy.get('input[name=emailAdress]').type('test@mail.com');
-    
+    cy.get('input[name=firstName]').type(chance.first());
+    cy.get('input[name=lastName]').type(chance.last());
+    cy.get('textarea[name=adress]').type(chance.address());
+    cy.get('input[name=emailAdress]').type(chance.email());
+
     cy.get('input[value=n]').check();
     cy.get('input[type=checkbox]').check('Netflix');
     cy.get('input[type=checkbox]').check('Dormir');
@@ -23,6 +26,6 @@ describe('Register', () => {
 
     cy.contains('Finalizar cadastro').click();
 
-    cy.url().should('contain', 'listagem')
+    cy.url().should('contain', 'listagem');
   });
 });
